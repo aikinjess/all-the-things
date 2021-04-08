@@ -132,8 +132,32 @@ class App extends Component {
         image: "https://m.media-amazon.com/images/I/61UgbSKIs4L._AC_UL1400_.jpg",
         attributes: ["sturdy", "leather", "dancing", "worn by all the cool kids except christian"],
       },
-    ]
-  };
+
+    ],
+    jessicasThings: [
+      {
+        name: "favorite food",
+        image: "https://imgs.xkcd.com/comics/functional.png",  
+        attributes: ["tacos", "mac and cheese", "seafood",],
+      },
+      {
+        name: "favorite shows",
+        image: "https://images.unsplash.com/photo-1518644730709-0835105d9daa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+        attributes: ["bates's motel", "power", "sisters"], 
+      },
+      {
+        name: "favorite destinations",
+        image: "https://susanmaryetta.files.wordpress.com/2011/06/blublocker-the-hangover.png?w=584",
+        attributes: ["bahamas", "las vegas", "detroit", "dubai"],
+      },
+      { 
+        name: "favorite colors", 
+        image: "https://i.imgur.com/gRxOxsA.jpg", 
+        attributes: ["pink", "turquoise", "teal", "blue"], 
+      },
+    ]  
+  }; 
+
   render() {
     return (
       <>
@@ -144,12 +168,12 @@ class App extends Component {
             <>
               {/* All the <a> tags should live here */}
               <h2>All-The-Things</h2>
-              <a href="/the-manliest-things">Ben's Things</a>
-              <br />
-              <a href="/the-functional-things">Shahzad's Things</a>
-              <br />
-              <a href="/the-well-styled-things">David's Things</a>
-              <br />
+
+              <a href="/the-manliest-things">Ben's Things</a><br/>
+              <a href="/the-functional-things">Shahzad's Things</a><br/>
+              <a href="/the-well-styled-things">David's Things</a><br/>
+              <a href="/jessicas-things">Jessica's Things</a><br/>
+
             </>
           )}
         />
@@ -173,6 +197,10 @@ class App extends Component {
           exact
           path="/the-texas-things"
           render={() => <TexasThings things={this.state.christiansThings} />}
+        />
+         <Route 
+          exact path='/jessicas-things'
+          render={()=> <StyledThings things={this.state.jessicasThings} />}
         />
       </>
     );
